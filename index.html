@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Isaac Triplett</title>
+<meta name="description" content="Isaac Triplett, plasma synthesis PhD candidate in Chemical Engineering at McGill University: research, background, courses, interests and contact.">
+<link rel="canonical" href="https://isaactriplett.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F1F4EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1310" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://isaactriplett.github.io/">
+<meta property="og:title" content="Isaac Triplett">
+<meta property="og:description" content="Plasma synthesis PhD candidate at McGill, using plasma-driven solution electrochemistry to synthesize exotic alloy nanoparticles.">
+<meta property="og:image" content="https://isaactriplett.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Isaac Triplett, plasma synthesis PhD candidate at McGill, beside a simulated electron avalanche.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+
+/* Layout: an engineering-pad page. The hero pairs the name with a live discharge-gap figure;
+   sections stack below with mono metadata labels, prose held near 65ch, lists in auto-fill grids. */
+:root {
+  --paper: #F1F4EC;
+  --paper-2: #E7ECE1;
+  --paper-3: #FBFCF9;
+  --grid-fine: rgba(58, 104, 70, 0.07);
+  --grid-major: rgba(58, 104, 70, 0.12);
+  --ink: #17201B;
+  --ink-2: #4A5950;
+  --ink-3: #5E6D63;
+  --rule: #C6D1C1;
+  --accent: #5232C4;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E6E0FA;
+  --ok: #26704A;
+  --ok-soft: #DDF0E3;
+  --danger: #B42318;
+  --gap: #0D0A1A;
+  --gap-ink: #CFC8EE;
+  --gap-dim: #7C76A3;
+  --electron: #C9BDFF;
+  --ion: #E59A5B;
+  --electrode: #9AA3B5;
+
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.125rem;
+  --step-2: 1.375rem;
+  --step-3: clamp(1.5rem, 1.2rem + 1.2vw, 2rem);
+  --step-4: clamp(2rem, 1.45rem + 2.3vw, 2.875rem);
+  --step-5: clamp(2.75rem, 1rem + 7.4vw, 6.75rem);
+  --radius: 4px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0E1310;
+    --paper-2: #161D18;
+    --paper-3: #121814;
+    --grid-fine: rgba(160, 205, 170, 0.045);
+    --grid-major: rgba(160, 205, 170, 0.08);
+    --ink: #E2EAE1;
+    --ink-2: #A9B7AD;
+    --ink-3: #8C9B91;
+    --rule: #2A352E;
+    --accent: #A994FF;
+    --accent-ink: #130D2C;
+    --accent-soft: #272049;
+    --ok: #7FD3A0;
+    --ok-soft: #13291D;
+    --danger: #FF9B8F;
+    --gap: #0A0814;
+    --gap-ink: #CFC8EE;
+    --gap-dim: #7C76A3;
+    --electron: #C9BDFF;
+    --ion: #E59A5B;
+    --electrode: #8C94A6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0E1310;
+  --paper-2: #161D18;
+  --paper-3: #121814;
+  --grid-fine: rgba(160, 205, 170, 0.045);
+  --grid-major: rgba(160, 205, 170, 0.08);
+  --ink: #E2EAE1;
+  --ink-2: #A9B7AD;
+  --ink-3: #8C9B91;
+  --rule: #2A352E;
+  --accent: #A994FF;
+  --accent-ink: #130D2C;
+  --accent-soft: #272049;
+  --ok: #7FD3A0;
+  --ok-soft: #13291D;
+  --danger: #FF9B8F;
+  --gap: #0A0814;
+  --gap-ink: #CFC8EE;
+  --gap-dim: #7C76A3;
+  --electron: #C9BDFF;
+  --ion: #E59A5B;
+  --electrode: #8C94A6;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-fine) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-fine) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-1);
+  line-height: 1.6;
+  font-optical-sizing: auto;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: var(--paper);
+}
+::selection { background: var(--accent-soft); color: var(--ink); }
+h1, h2, h3, h4 { text-wrap: balance; }
+a { color: var(--accent); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+output { font: inherit; }
+sub, sup { line-height: 0; }
+.vh {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.skip {
+  position: absolute; z-index: 30; top: -100px; left: max(16px, env(safe-area-inset-left, 0px));
+  background: var(--ink); color: var(--paper); padding: 8px 12px; border-radius: var(--radius);
+  font-family: var(--font-mono); font-size: var(--step--1); text-decoration: none;
+}
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 8px); }
+
+.wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap {
+    padding-left: max(32px, env(safe-area-inset-left, 0px));
+    padding-right: max(32px, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* Buttons */
+.btn, .btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.03em;
+  line-height: 1; padding: 11px 16px; border-radius: var(--radius); border: 1px solid transparent;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.btn { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn:hover { filter: brightness(1.08); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--rule); }
+.btn-ghost:hover { border-color: var(--ink-2); }
+.btn[disabled], .btn-ghost[disabled] { opacity: 0.6; cursor: default; filter: none; }
+.btn-small { padding: 7px 10px; font-size: 0.75rem; }
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+}
+.header-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px 24px;
+  padding-block: 12px;
+}
+.brand {
+  font-family: var(--font-display); font-stretch: 112%; font-weight: 700; font-size: 1rem;
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; }
+.nav a {
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
+  text-decoration: none; padding-block: 4px;
+}
+.nav a:hover { color: var(--accent); }
+@media (max-width: 479px) {
+  .brand { display: none; }
+  .header-row { justify-content: center; }
+  .nav { justify-content: center; gap: 4px 16px; }
+}
+
+/* Hero */
+.hero { padding-block: clamp(28px, 5vw, 56px) clamp(40px, 6vw, 72px); }
+.hero-grid { display: grid; gap: 28px 48px; grid-template-columns: minmax(0, 1fr); }
+.hero-head { display: grid; gap: 10px; }
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; }
+  .hero-head { grid-column: 1 / -1; }
+}
+.eyebrow {
+  margin: 0; font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+.hero-name {
+  margin: 0; font-family: var(--font-display); font-stretch: 120%; font-weight: 800;
+  font-size: var(--step-5); line-height: 0.92; letter-spacing: -0.025em; color: var(--ink);
+}
+.hero-text { display: grid; gap: 22px; align-content: start; min-width: 0; }
+.lede { margin: 0; font-size: var(--step-2); line-height: 1.45; max-width: 36ch; }
+.facts {
+  margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px;
+  border-top: 1px solid var(--rule); padding-top: 16px;
+}
+.facts div { display: grid; gap: 2px; min-width: 0; }
+.facts dt {
+  font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+.facts dd { margin: 0; font-size: var(--step-0); line-height: 1.35; }
+.hero-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+
+/* Figure: the discharge gap */
+.fig { margin: 0; display: grid; gap: 12px; min-width: 0; }
+.fig-panel {
+  position: relative; height: clamp(220px, 27vw, 340px); background: var(--gap);
+  border-radius: var(--radius); overflow: hidden; box-shadow: 0 0 0 1px var(--rule);
+}
+.fig-panel canvas { display: block; width: 100%; height: 100%; }
+.fig-tag {
+  position: absolute; top: 10px; font-family: var(--font-mono); font-size: 0.6875rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--gap-ink); pointer-events: none;
+}
+.fig-tag.cathode { left: 12px; }
+.fig-tag.anode { right: 12px; }
+.fig-tag.field { left: 50%; transform: translateX(-50%); color: var(--gap-dim); letter-spacing: 0.2em; }
+.fig figcaption { display: grid; gap: 10px; font-size: var(--step-0); line-height: 1.5; color: var(--ink-2); }
+.fig figcaption p { margin: 0; max-width: 72ch; }
+.fig-no {
+  font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--ink); margin-right: 6px;
+}
+.fig-controls {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.fig-controls label { display: inline-flex; gap: 6px; align-items: baseline; white-space: nowrap; }
+.fig-controls input[type="range"] { width: min(200px, 100%); accent-color: var(--accent); }
+.legend { display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.sw {
+  display: inline-block; position: relative; width: 14px; height: 14px; border-radius: 3px;
+  background: var(--gap); vertical-align: -2px;
+}
+.sw::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; }
+.sw-e::after { background: var(--electron); }
+.sw-i::after { background: var(--ion); border-radius: 1px; }
+
+/* Sections */
+.section {
+  border-top: 1px solid var(--rule);
+  padding-block: clamp(44px, 7vw, 80px);
+  scroll-margin-top: calc(52px + env(safe-area-inset-top, 0px));
+}
+.section-head { display: grid; gap: 8px; margin-bottom: clamp(24px, 4vw, 40px); max-width: 60rem; }
+.label {
+  margin: 0; font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+.section h2:not(.label) {
+  margin: 0; font-family: var(--font-display); font-stretch: 112%; font-weight: 700;
+  font-size: var(--step-4); line-height: 1.06; letter-spacing: -0.015em;
+}
+.meta { margin: 0; font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2); }
+.h3 {
+  margin: 0 0 12px; font-family: var(--font-display); font-stretch: 108%; font-weight: 700;
+  font-size: 1.0625rem; letter-spacing: 0;
+}
+
+/* Background */
+.about-grid { display: grid; gap: 36px 56px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 960px) { .about-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); } }
+.about-more { margin-top: clamp(36px, 5vw, 56px); }
+.prose p { margin: 0 0 1em; max-width: 65ch; }
+.prose p:last-child { margin-bottom: 0; }
+.path-list, .timeline { list-style: none; margin: 0; padding: 0; }
+.path-list li, .timeline li {
+  display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 2px 16px;
+  padding-block: 12px; border-top: 1px solid var(--rule);
+}
+.yrs {
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
+  font-variant-numeric: tabular-nums; padding-top: 0.2em; white-space: nowrap;
+}
+.where { font-family: var(--font-display); font-weight: 650; font-size: 1rem; line-height: 1.3; }
+.what { font-size: var(--step-0); color: var(--ink-2); line-height: 1.45; }
+.stack { display: grid; gap: 28px; align-content: start; min-width: 0; }
+.cite { margin: 0; font-size: var(--step-0); line-height: 1.5; }
+.plain { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: var(--step-0); line-height: 1.45; }
+.toolkit { margin: 0; font-family: var(--font-mono); font-size: var(--step--1); line-height: 1.8; color: var(--ink-2); }
+@media (max-width: 479px) {
+  .path-list li, .timeline li { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Fun fact */
+.fact {
+  display: grid; gap: 14px; max-width: 880px; background: var(--paper-2);
+  border: 1px solid var(--rule); border-radius: var(--radius); padding: clamp(20px, 4vw, 40px);
+}
+.fact > * { min-width: 0; }
+.fact-main { display: grid; gap: 14px; min-width: 0; }
+.fact-title {
+  margin: 0; font-family: var(--font-display); font-stretch: 110%; font-weight: 700;
+  font-size: var(--step-3); line-height: 1.12; letter-spacing: -0.01em; text-wrap: balance;
+}
+.fact-body { display: grid; gap: 10px; font-size: var(--step-1); }
+.fact-body > * { min-width: 0; }
+.fact-body p { margin: 0; max-width: 62ch; }
+.fact-body .formula {
+  font-size: clamp(1.2rem, 0.95rem + 1.4vw, 1.75rem); overflow-x: auto; white-space: nowrap;
+  padding-block: 6px; max-width: none;
+}
+.fact-body .fact-links {
+  display: flex; flex-wrap: wrap; gap: 6px 20px; font-family: var(--font-mono); font-size: var(--step--1);
+}
+.fact-foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  padding-top: 14px; border-top: 1px solid var(--rule);
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
+}
+
+/* Courses */
+.filters { display: grid; gap: 12px; margin-bottom: 8px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  font-family: var(--font-mono); font-size: var(--step--1); line-height: 1; padding: 8px 12px;
+  border-radius: 999px; border: 1px solid var(--rule); background: var(--paper-3); color: var(--ink);
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--ink-2); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.chip .n { opacity: 0.7; margin-left: 4px; font-variant-numeric: tabular-nums; }
+.search-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.search-row input { flex: 1 1 260px; max-width: 440px; min-width: 0; }
+.count {
+  margin: 0; font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.school { padding-block: 28px 8px; }
+.school + .school { border-top: 1px solid var(--rule); }
+.school-head { display: grid; gap: 6px; margin-bottom: 18px; }
+.school-head h3 {
+  margin: 0; font-family: var(--font-display); font-stretch: 112%; font-weight: 700;
+  font-size: var(--step-2); line-height: 1.15;
+}
+.school-meta {
+  margin: 0; display: flex; flex-wrap: wrap; gap: 2px 18px;
+  font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
+}
+.terms {
+  display: grid; gap: 24px 36px; align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+}
+.term { min-width: 0; }
+.term h4 {
+  margin: 0 0 8px; padding-bottom: 6px; border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+.course-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.course {
+  display: grid; grid-template-columns: 6.25rem minmax(0, 1fr); gap: 12px; align-items: baseline;
+  font-size: var(--step-0); line-height: 1.4;
+}
+.code {
+  font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink-2); white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.pill {
+  display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.04em; line-height: 1.3;
+  white-space: nowrap; vertical-align: 1px;
+}
+.pill-progress { background: var(--accent-soft); color: var(--accent); }
+.pill-planned { border: 1px dashed var(--ink-3); color: var(--ink-2); }
+.empty { margin: 24px 0 0; font-size: var(--step-0); color: var(--ink-2); }
+
+/* Interests */
+.int-block + .int-block { margin-top: clamp(40px, 6vw, 64px); }
+.int-grid { margin: 0; display: grid; gap: 0 48px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .int-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1100px) { .int-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.int-list { margin: 0; }
+.int { padding-block: 14px; border-top: 1px solid var(--rule); display: grid; gap: 4px; align-content: start; }
+.outside-head { display: grid; gap: 6px; margin-bottom: 20px; max-width: 60ch; }
+.outside-head .h3 { margin: 0; }
+.outside-lede { margin: 0; }
+.outside-grid { display: grid; gap: 32px 56px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 960px) { .outside-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+.log {
+  display: grid; gap: 14px; align-content: start; min-width: 0;
+  background: var(--paper-2); border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: clamp(18px, 3vw, 28px);
+}
+.log-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.log-row {
+  display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); grid-template-areas: "sport value" "sport note";
+  gap: 4px 16px; align-items: baseline; padding-block: 14px; border-top: 1px solid var(--rule);
+}
+.log-row:first-child { border-top: 0; padding-top: 0; }
+.log-sport {
+  grid-area: sport; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-2);
+}
+.log-value {
+  grid-area: value; font-family: var(--font-display); font-stretch: 115%; font-weight: 800;
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem); line-height: 1; letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums; color: var(--ink);
+}
+.log-note { grid-area: note; font-size: var(--step-0); line-height: 1.45; color: var(--ink-2); }
+.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li {
+  font-family: var(--font-mono); font-size: var(--step--1); line-height: 1; padding: 8px 12px;
+  border: 1px solid var(--rule); border-radius: 999px; background: var(--paper-3); color: var(--ink);
+}
+.outside-foot { margin: 20px 0 0; font-family: var(--font-mono); font-size: var(--step--1); }
+@media (max-width: 479px) {
+  .log-row { grid-template-columns: minmax(0, 1fr); grid-template-areas: "sport" "value" "note"; }
+}
+.int dt { font-family: var(--font-display); font-weight: 650; font-size: 1.0625rem; }
+.int dd { margin: 0; font-size: var(--step-0); line-height: 1.5; color: var(--ink-2); max-width: 56ch; }
+
+/* Contact */
+.contact-grid { display: grid; gap: 32px 56px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 960px) { .contact-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); } }
+.contact-intro { display: grid; gap: 22px; align-content: start; min-width: 0; }
+.contact-intro > p { margin: 0; max-width: 46ch; }
+.direct { display: grid; gap: 6px; }
+.direct .label { color: var(--ink-2); font-size: 0.75rem; }
+.addr {
+  margin: 0 0 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+  font-family: var(--font-mono); font-size: 0.9375rem; overflow-wrap: anywhere;
+}
+.links { margin: 0; display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--font-mono); font-size: var(--step--1); }
+.form {
+  position: relative;
+  display: grid; gap: 16px; background: var(--paper-2); border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: clamp(18px, 3.5vw, 32px); min-width: 0;
+}
+.hp { position: absolute; left: -9999px; top: 0; width: 1px; height: 1px; overflow: hidden; }
+.row-2 { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 620px) { .row-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.field { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.field label { font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500; color: var(--ink); }
+.opt { font-weight: 400; color: var(--ink-3); }
+.field input, .field textarea, .search-row input {
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.4; color: var(--ink);
+  background: var(--paper-3); border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 10px 12px; width: 100%;
+}
+.field textarea { resize: vertical; min-height: 7.5rem; }
+.field input::placeholder, .field textarea::placeholder, .search-row input::placeholder { color: var(--ink-3); }
+.field [aria-invalid="true"] { border-color: var(--danger); box-shadow: 0 0 0 1px var(--danger); }
+.err { margin: 0; font-size: 0.9375rem; color: var(--danger); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.notice { display: grid; gap: 10px; padding: 14px 16px; border-radius: var(--radius); font-size: var(--step-0); line-height: 1.5; }
+.notice p { margin: 0; }
+.notice.ok { background: var(--ok-soft); border: 1px solid var(--ok); }
+.notice.info { background: var(--paper-3); border: 1px solid var(--rule); }
+.msg-copy {
+  margin: 0; padding: 12px; max-height: 14rem; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere;
+  font-family: var(--font-mono); font-size: 0.8125rem; line-height: 1.5; color: var(--ink);
+  background: var(--paper); border: 1px solid var(--rule); border-radius: var(--radius);
+}
+
+/* Owner inbox */
+.inbox { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--rule); display: grid; gap: 14px; }
+.inbox-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.inbox-head .h3 { margin: 0; }
+.inbox-status { margin: 0; font-size: var(--step-0); color: var(--ink-2); }
+.inbox-list {
+  list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+}
+.msg {
+  display: grid; gap: 8px; align-content: start; padding: 14px 16px; min-width: 0;
+  background: var(--paper-3); border: 1px solid var(--rule); border-radius: var(--radius);
+}
+.msg-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.msg-who { font-family: var(--font-display); font-weight: 650; font-size: 1rem; overflow-wrap: anywhere; }
+.msg-time { font-family: var(--font-mono); font-size: 0.75rem; color: var(--ink-2); }
+.msg-contact { display: grid; gap: 2px; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--ink-2); overflow-wrap: anywhere; }
+.msg-body { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--step-0); line-height: 1.5; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--rule); }
+.footer-row {
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px;
+  padding-block: 24px 36px; font-family: var(--font-mono); font-size: var(--step--1); color: var(--ink-2);
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top">Isaac Triplett</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">Background</a>
+      <a href="#courses">Courses</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="name">
+    <div class="wrap hero-grid">
+      <div class="hero-head">
+        <p class="eyebrow">Plasma synthesis PhD candidate · McGill · Montréal</p>
+        <h1 class="hero-name" id="name">Isaac Triplett</h1>
+      </div>
+
+      <div class="hero-text">
+        <p class="lede">I use plasma-driven solution electrochemistry to synthesize exotic alloy nanoparticles. A non-thermal discharge touching a liquid injects electrons straight into solution, so the plasma itself does the reducing.</p>
+        <dl class="facts">
+          <div><dt>Major</dt><dd>Chemical Engineering (PhD)</dd></div>
+          <div><dt>University</dt><dd>McGill University</dd></div>
+          <div><dt>Research</dt><dd>Plasma-driven solution electrochemistry</dd></div>
+          <div><dt>Expected</dt><dd>2028</dd></div>
+        </dl>
+        <div class="hero-links">
+          <a class="btn" href="#contact">Contact me</a>
+          <p class="links"><a href="https://www.linkedin.com/in/isaac-triplett-341266223/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/triplett_isaac/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://github.com/isaactriplett" target="_blank" rel="noopener">GitHub ↗</a></p>
+        </div>
+      </div>
+
+      <figure class="fig" aria-labelledby="fig-cap">
+        <div class="fig-panel" id="fig-panel">
+          <canvas id="avalanche" role="img" aria-label="Animated Monte Carlo simulation of an electron avalanche. Electrons leave the cathode on the left, drift toward the anode on the right, and multiply through ionizing collisions, leaving slower positive ions behind."></canvas>
+          <span class="fig-tag cathode">Cathode −</span>
+          <span class="fig-tag field" aria-hidden="true">E →</span>
+          <span class="fig-tag anode">Anode +</span>
+        </div>
+        <figcaption id="fig-cap">
+          <p><span class="fig-no">Fig. 1</span>A Townsend avalanche across a 2 mm gas gap, simulated live. Each electron drifts toward the anode and ionizes with probability α·d<i>x</i> per step, so the swarm grows as <i>n</i>(<i>x</i>) = <i>n</i><sub>0</sub>e<sup>α<i>x</i></sup>.</p>
+          <div class="fig-controls">
+            <label for="alpha">α <output id="alpha-out" for="alpha">2.2</output> mm⁻¹</label>
+            <input type="range" id="alpha" min="0.5" max="3.4" step="0.1" value="2.2" aria-describedby="gain-line">
+            <span id="gain-line">gain e<sup>αd</sup> ≈ <output id="gain-out">81</output></span>
+            <span>electrons now <output id="count-out">0</output></span>
+            <span class="legend"><span class="sw sw-e" aria-hidden="true"></span>electron <span class="sw sw-i" aria-hidden="true"></span>ion</span>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="label">Background</p>
+        <h2 id="about-h">From community college to cold plasma</h2>
+        <p class="meta">Vancouver, WA → Vancouver, BC → Eugene, OR → Montréal, QC</p>
+      </header>
+
+      <div class="about-grid">
+        <div class="prose">
+          <p>I’m a plasma synthesis PhD candidate in Chemical Engineering at McGill University, working with Prof. Pierre-Luc Girard-Lauriault at McGill and Prof. Ahmad Hamdan at Université de Montréal. I use plasma-driven solution electrochemistry to synthesize exotic alloy nanoparticles. A non-thermal discharge in contact with the liquid supplies the reducing electrons and radicals, so no sacrificial electrode or chemical reducing agent is needed. The goal is a scalable, composition-flexible route to high-entropy alloys, which mix five or more metals in one particle. I passed my proposal defence in 2026 and expect to finish in 2028.</p>
+          <p>The work runs from simulation to the bench. I model electron transport in the discharge with Monte Carlo codes such as METHES, couple the Nernst–Planck and Navier–Stokes equations to describe the plasma–liquid interface, and run syntheses in water and in ionic liquids, then characterize the particles with STEM/EDS and XPS.</p>
+          <p>I came to chemistry through community college. After three years of chemistry, calculus and physics at Clark College, I finished a BSc in Chemistry at the University of British Columbia with a focus on physical chemistry, including a year in Allan Bertram’s group studying particle-size distributions from electrospray ionization. I then joined the University of Oregon’s electrochemistry master’s internship program (MS Chemistry, 2024), working on redox-flow-battery membranes and then, in Paul Kempler’s group, on aluminum-doped hematite for electrochemical ironmaking.</p>
+          <p>Long term, I want to start a materials-synthesis company or lead advanced R&amp;D.</p>
+        </div>
+
+        <aside aria-labelledby="path-h">
+          <h3 class="h3" id="path-h">Education</h3>
+          <ol class="path-list" reversed>
+            <li><span class="yrs">2025 – now</span><span><span class="where">McGill University</span><br><span class="what">PhD, Chemical Engineering · Montréal, QC</span></span></li>
+            <li><span class="yrs">2023 – 2024</span><span><span class="where">University of Oregon</span><br><span class="what">MS, Chemistry (electrochemistry) · Eugene, OR</span></span></li>
+            <li><span class="yrs">2020 – 2023</span><span><span class="where">University of British Columbia</span><br><span class="what">BSc, Chemistry · Vancouver, BC</span></span></li>
+            <li><span class="yrs">2017 – 2020</span><span><span class="where">Clark College</span><br><span class="what">Chemistry, math and physics · Vancouver, WA</span></span></li>
+          </ol>
+        </aside>
+      </div>
+
+      <div class="about-grid about-more">
+        <div>
+          <h3 class="h3">Research</h3>
+          <ol class="timeline" reversed>
+            <li><span class="yrs">2025 – now</span><span><span class="where">McGill University</span><br><span class="what">Plasma-driven solution electrochemistry for exotic alloy nanoparticles. Latest result: a pin-to-liquid discharge reduced copper in an ionic liquid with no chemical reductant, while chromium, manganese, iron and nickel stayed oxidized.</span></span></li>
+            <li><span class="yrs">2024 – 2025</span><span><span class="where">Kempler Group, University of Oregon</span><br><span class="what">Made aluminum-doped hematite particles with controlled pseudocubic shape; found that pH selects hexagonal or pseudocubic particles, and that 5% aluminum speeds their electrochemical reduction.</span></span></li>
+            <li><span class="yrs">2024</span><span><span class="where">Entek and Harlow Group</span><br><span class="what">Membranes for iron and vanadium redox-flow batteries, alongside a team of materials-characterization specialists.</span></span></li>
+            <li><span class="yrs">2022 – 2023</span><span><span class="where">Bertram Group, UBC</span><br><span class="what">Showed that higher sheath-gas flow dilutes an electrospray aerosol, shifts its droplets smaller and strengthens mass-spectrometry signals.</span></span></li>
+            <li><span class="yrs">2022</span><span><span class="where">Computational project, UBC</span><br><span class="what">Led a group building GROMACS simulations of how nebulized solvent droplets break apart.</span></span></li>
+          </ol>
+        </div>
+
+        <div class="stack">
+          <div>
+            <h3 class="h3">Publication</h3>
+            <p class="cite">Konovalova, A.; Goldman, A. C.; Shekhar, R.; <strong>Triplett, I.</strong>; Moutarlier, L. J.; Kwak, M.; Kempler, P. A. Pathways to Electrochemical Ironmaking at Scale Via the Direct Reduction of Fe<sub>2</sub>O<sub>3</sub>. <em>ACS Energy Letters</em> <strong>2025</strong>, 10 (4), 1851–1857. <a href="https://doi.org/10.1021/acsenergylett.5c00166" target="_blank" rel="noopener">doi:10.1021/acsenergylett.5c00166</a></p>
+          </div>
+          <div>
+            <h3 class="h3">Posters</h3>
+            <ul class="plain">
+              <li><em>Selective Plasma Reduction of Copper in a Multimetal Ionic-Liquid DBD Reactor</em>, with A. Hamdan and P.-L. Girard-Lauriault. HAKONE 2026.</li>
+              <li>Plasma reduction of copper in an ionic liquid. ECS 2026, Calgary.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="h3">Teaching</h3>
+            <ul class="plain">
+              <li>Teaching assistant at McGill for CHEE 390, CHEE 541 and CHEE 687 (Research Skills and Ethics).</li>
+              <li>Chemistry tutor at the University of Oregon: introductory, general and physical chemistry.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="h3">Toolkit</h3>
+            <p class="toolkit">MATLAB · Python · COMSOL · GROMACS · LaTeX · Git · EIS · cyclic voltammetry · SEM/EDS · TEM · XPS · ICP-MS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fun-fact" aria-labelledby="fact-h">
+    <div class="wrap">
+      <div class="fact">
+        <h2 class="label" id="fact-h">Fun fact</h2>
+        <div id="fact-live" aria-live="polite" class="fact-main">
+          <p class="fact-title" id="fact-title">I’ve written physics into Wikipedia.</p>
+          <div class="fact-body" id="fact-body">
+            <p>I added an elementary derivation of the Bose–Einstein distribution from the microcanonical ensemble, and a generalization of the triple product rule. The textbook identity is</p>
+            <p class="formula"><span aria-hidden="true">(∂<i>x</i>/∂<i>y</i>)<sub><i>z</i></sub> (∂<i>y</i>/∂<i>z</i>)<sub><i>x</i></sub> (∂<i>z</i>/∂<i>x</i>)<sub><i>y</i></sub> = −1</span><span class="vh">The partial derivative of x with respect to y at constant z, times y with respect to z at constant x, times z with respect to x at constant y, equals minus one.</span></p>
+            <p>With one constraint on <i>j</i> variables, the same cyclic product equals (−1)<sup><i>j</i></sup>: +1 for four variables, −1 for five.</p>
+            <p class="fact-links"><a href="https://en.wikipedia.org/wiki/Triple_product_rule" target="_blank" rel="noopener">Triple product rule ↗</a><a href="https://en.wikipedia.org/wiki/Bose%E2%80%93Einstein_statistics" target="_blank" rel="noopener">Bose–Einstein statistics ↗</a></p>
+          </div>
+        </div>
+        <div class="fact-foot">
+          <span id="fact-count">Fact 1 of 5</span>
+          <button type="button" class="btn-ghost" id="fact-next">Another fact</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="courses" aria-labelledby="courses-h">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="label">Courses</p>
+        <h2 id="courses-h">Every course, taken and planned</h2>
+        <p class="meta" id="course-meta">86 courses · 4 schools · Fall 2017 to Winter 2027</p>
+      </header>
+
+      <div class="filters">
+        <div class="chip-row" role="group" aria-label="Filter by school" id="school-chips"></div>
+        <div class="chip-row" role="group" aria-label="Filter by status" id="status-chips"></div>
+        <div class="search-row">
+          <label for="course-q" class="vh">Search courses</label>
+          <input type="search" id="course-q" placeholder="Search by code or title, e.g. thermodynamics" autocomplete="off" spellcheck="false">
+          <p class="count" id="course-count" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div id="course-list"></div>
+      <noscript><p class="empty">Turn on JavaScript to see the full course list.</p></noscript>
+      <p class="empty" id="course-empty" hidden></p>
+    </div>
+  </section>
+
+  <section class="section" id="interests" aria-labelledby="interests-h">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="label">Interests</p>
+        <h2 id="interests-h">What I think about, in and out of the lab</h2>
+      </header>
+
+      <div class="int-block">
+          <h3 class="h3">In the lab</h3>
+          <dl class="int-grid">
+            <div class="int"><dt>Plasma–liquid chemistry</dt><dd>How a cold discharge over water or an ionic liquid supplies the electrons and radicals that turn metal salts into particles.</dd></div>
+            <div class="int"><dt>High-entropy alloys</dt><dd>Why some mixtures of five or more metals stay a single phase, and why current theories of mixing entropy don’t fully explain it.</dd></div>
+            <div class="int"><dt>Electron swarms</dt><dd>Monte Carlo electron transport with METHES and BOLSIG+, and what the Townsend model really predicts about where ionizations happen.</dd></div>
+            <div class="int"><dt>Statistical mechanics</dt><dd>Derivations a reader can follow with basic calculus, from Bose–Einstein statistics to mixing entropy in solids.</dd></div>
+            <div class="int"><dt>Mathematical physics</dt><dd>Fourier analysis, curvilinear coordinates, and the quantum mechanics under spectroscopy.</dd></div>
+            <div class="int"><dt>Open science</dt><dd>Contributing clean-ups to open research code and clear derivations to Wikipedia.</dd></div>
+          </dl>
+      </div>
+
+      <section class="int-block" aria-labelledby="outside-h">
+        <div class="outside-head">
+          <h3 class="h3" id="outside-h">Outside it</h3>
+          <p class="outside-lede">I’m into all sorts of athletics, with lifting at the center of it.</p>
+        </div>
+        <div class="outside-grid">
+          <div class="log">
+            <p class="label" id="log-h">Milestones</p>
+            <ul class="log-list" aria-labelledby="log-h">
+              <li class="log-row"><span class="log-sport">Lifting</span><span class="log-value">3 plates</span><span class="log-note">My first back squat with three plates a side.</span></li>
+              <li class="log-row"><span class="log-sport">Running</span><span class="log-value">23:42</span><span class="log-note">My first 5 km.</span></li>
+              <li class="log-row"><span class="log-sport">Bouldering</span><span class="log-value">V6</span><span class="log-note">Indoor problems in Montréal.</span></li>
+            </ul>
+            <p class="label" id="also-h">Also in the rotation</p>
+            <ul class="tags" aria-labelledby="also-h"><li>Hockey</li><li>Martial arts</li><li>Acrobatics</li><li>Dance</li></ul>
+          </div>
+          <dl class="int-list">
+            <div class="int"><dt>Outdoors</dt><dd>Hikes in Parc national de la Jacques-Cartier, and Oregon’s Cascades before that. Mt. Bachelor or Mt. Hood? Still undecided.</dd></div>
+            <div class="int"><dt>Cooking</dt><dd>I’ll make the case for mango–prosciutto–mushroom baked brie to anyone who asks.</dd></div>
+            <div class="int"><dt>Writing</dt><dd>Fiction and essays, including stories drawn from PhD life in Montréal.</dd></div>
+            <div class="int"><dt>Philosophy, film and history</dt><dd>My electives ran from Plato and ethics to modernist art and American literature.</dd></div>
+            <div class="int"><dt>Architecture</dt><dd>Old basilicas, and fragile towers built apart from the main building for no apparent reason.</dd></div>
+            <div class="int"><dt>French and Montréal</dt><dd>Working on my French (FRSL 211 this year) and exploring the city’s food and Quebec’s cultural events.</dd></div>
+            <div class="int"><dt>The environment</dt><dd>A strong environmental ethos from growing up in the Pacific Northwest.</dd></div>
+          </dl>
+        </div>
+        <p class="outside-foot"><a href="https://www.instagram.com/triplett_isaac/" target="_blank" rel="noopener">More on Instagram ↗</a></p>
+      </section>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <header class="section-head">
+        <p class="label">Contact me</p>
+        <h2 id="contact-h">Get in touch</h2>
+      </header>
+
+      <div class="contact-grid">
+        <div class="contact-intro">
+          <p>Questions about plasma synthesis or high-entropy alloys, a collaboration, or an opportunity? Leave your details and I’ll get back to you.</p>
+          <div class="direct">
+            <p class="label">Email</p>
+            <p class="addr"><span id="email-text">isaac.triplett@mcgill.ca</span><button type="button" class="btn-ghost btn-small" data-copy-target="#email-text">Copy</button></p>
+            <p class="label">Elsewhere</p>
+            <p class="links"><a href="https://www.linkedin.com/in/isaac-triplett-341266223/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/triplett_isaac/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://github.com/isaactriplett" target="_blank" rel="noopener">GitHub ↗</a></p>
+          </div>
+        </div>
+
+        <form class="form" id="contact-form" novalidate aria-labelledby="contact-h">
+          <div class="row-2">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" maxlength="120" required aria-describedby="cf-name-err" placeholder="Your name">
+              <p class="err" id="cf-name-err" hidden></p>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" maxlength="200" required aria-describedby="cf-email-err" placeholder="name@example.com">
+              <p class="err" id="cf-email-err" hidden></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-phone">Phone <span class="opt">(optional)</span></label>
+            <input id="cf-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" aria-describedby="cf-phone-err" placeholder="+1 514 555 0123">
+            <p class="err" id="cf-phone-err" hidden></p>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message <span class="opt">(optional)</span></label>
+            <textarea id="cf-message" name="message" rows="4" maxlength="2000" placeholder="What would you like to talk about?"></textarea>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="cf-company">Company</label>
+            <input id="cf-company" name="_honey" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="actions">
+            <button type="submit" class="btn" id="cf-submit">Send message</button>
+            <button type="reset" class="btn-ghost" id="cf-reset">Clear</button>
+          </div>
+          <div id="cf-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <section class="inbox" id="inbox" aria-labelledby="inbox-h" hidden>
+        <div class="inbox-head">
+          <h3 class="h3" id="inbox-h">Messages from the form</h3>
+          <span class="meta">Only you can see this list</span>
+        </div>
+        <p class="inbox-status" id="inbox-status">Loading messages…</p>
+        <ul class="inbox-list" id="inbox-list"></ul>
+      </section>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <span>Isaac Triplett · Montréal, Québec</span>
+    <span>Updated November 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Helpers ---------- */
+  const $ = (sel) => document.querySelector(sel);
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  async function copyFrom(target, btn) {
+    const node = typeof target === "string" ? document.querySelector(target) : target;
+    if (!node) return;
+    const text = node.textContent;
+    const original = btn.dataset.label || btn.textContent;
+    btn.dataset.label = original;
+    const flash = (label) => {
+      btn.textContent = label;
+      clearTimeout(btn._t);
+      btn._t = setTimeout(() => { btn.textContent = btn.dataset.label; }, 1800);
+    };
+    try {
+      await navigator.clipboard.writeText(text);
+      flash("Copied");
+    } catch (e) {
+      try {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      } catch (e2) { /* nothing else to try */ }
+      flash("Text selected");
+    }
+  }
+  document.addEventListener("click", (ev) => {
+    const btn = ev.target.closest("[data-copy-target]");
+    if (btn) copyFrom(btn.dataset.copyTarget, btn);
+  });
+
+  /* ---------- Fig. 1: Townsend avalanche (Monte Carlo) ---------- */
+  (function avalanche() {
+    const panel = $("#fig-panel");
+    const canvas = $("#avalanche");
+    const ctx = canvas.getContext("2d");
+    const slider = $("#alpha");
+    const outAlpha = $("#alpha-out");
+    const outGain = $("#gain-out");
+    const outCount = $("#count-out");
+    const reduceMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const GAP_MM = 2;
+    const CROSS_FRAMES = 150;
+    const DX = GAP_MM / CROSS_FRAMES;
+    const SIG = 0.011;
+    const MAX_E = 1500;
+    const MAX_ION = 3500;
+    const ION_LIFE = 240;
+    const PAD = { l: 18, r: 18, t: 34, b: 30 };
+
+    let alpha = parseFloat(slider.value);
+    let W = 1, H = 1, innerW = 1, innerH = 1, hMM = 1;
+    let electrons = [], ions = [], flashes = [];
+    let seedIn = 0, running = false, visible = true, raf = 0, frame = 0;
+    let colors = null, sprite = null;
+
+    function hexToRgb(hex) {
+      let h = String(hex).trim().replace("#", "");
+      if (h.length === 3) h = h.split("").map((c) => c + c).join("");
+      const v = parseInt(h, 16);
+      if (Number.isNaN(v)) return [13, 10, 26];
+      return [(v >> 16) & 255, (v >> 8) & 255, v & 255];
+    }
+    function makeSprite(col) {
+      const s = document.createElement("canvas");
+      const R = 7;
+      s.width = s.height = R * 2;
+      const g = s.getContext("2d");
+      const grad = g.createRadialGradient(R, R, 0, R, R, R);
+      grad.addColorStop(0, "rgba(255,255,255,0.95)");
+      grad.addColorStop(0.3, col);
+      grad.addColorStop(1, "rgba(0,0,0,0)");
+      g.fillStyle = grad;
+      g.fillRect(0, 0, R * 2, R * 2);
+      return s;
+    }
+    function readColors() {
+      const cs = getComputedStyle(document.documentElement);
+      const get = (n, fb) => (cs.getPropertyValue(n) || "").trim() || fb;
+      colors = {
+        gap: get("--gap", "#0D0A1A"),
+        dim: get("--gap-dim", "#7C76A3"),
+        electron: get("--electron", "#C9BDFF"),
+        ion: get("--ion", "#E59A5B"),
+        electrode: get("--electrode", "#9AA3B5"),
+      };
+      colors.gapRGB = hexToRgb(colors.gap);
+      sprite = makeSprite(colors.electron);
+    }
+    function resize() {
+      const r = panel.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = Math.max(1, Math.round(r.width));
+      H = Math.max(1, Math.round(r.height));
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      innerW = Math.max(1, W - PAD.l - PAD.r);
+      innerH = Math.max(1, H - PAD.t - PAD.b);
+      hMM = GAP_MM * innerH / innerW;
+      for (const p of electrons) p.y = Math.min(p.y, hMM);
+      for (const p of ions) p.y = Math.min(p.y, hMM);
+    }
+    const px = (x) => PAD.l + (x / GAP_MM) * innerW;
+    const py = (y) => PAD.t + (y / hMM) * innerH;
+    function gauss() {
+      let u = 0;
+      while (u === 0) u = Math.random();
+      return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * Math.random());
+    }
+
+    function step() {
+      if (--seedIn <= 0) {
+        electrons.push({ x: 0.01, y: hMM * (0.15 + 0.7 * Math.random()) });
+        seedIn = 55 + Math.random() * 70;
+      }
+      const p = alpha * DX;
+      const next = [];
+      for (let k = 0; k < electrons.length; k++) {
+        const q = electrons[k];
+        q.x += DX + SIG * 0.6 * gauss();
+        q.y += SIG * gauss();
+        if (q.y < 0) q.y = -q.y;
+        else if (q.y > hMM) q.y = 2 * hMM - q.y;
+        if (q.x >= GAP_MM) {
+          if (flashes.length < 60) flashes.push({ y: q.y, t: 0 });
+          continue;
+        }
+        if (q.x < 0) q.x = 0;
+        next.push(q);
+        if (Math.random() < p && next.length < MAX_E) {
+          next.push({ x: q.x, y: q.y });
+          if (ions.length < MAX_ION) ions.push({ x: q.x, y: q.y, t: 0 });
+        }
+      }
+      electrons = next;
+      let w = 0;
+      for (let k = 0; k < ions.length; k++) {
+        const i = ions[k];
+        i.t++;
+        i.x -= DX * 0.02;
+        if (i.t < ION_LIFE && i.x > 0) ions[w++] = i;
+      }
+      ions.length = w;
+      w = 0;
+      for (let k = 0; k < flashes.length; k++) {
+        const f = flashes[k];
+        if (++f.t < 16) flashes[w++] = f;
+      }
+      flashes.length = w;
+    }
+
+    function draw(trail) {
+      const [r, g, b] = colors.gapRGB;
+      ctx.globalCompositeOperation = "source-over";
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = trail ? `rgba(${r},${g},${b},0.3)` : colors.gap;
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.fillStyle = colors.ion;
+      for (let k = 0; k < ions.length; k++) {
+        const i = ions[k];
+        ctx.globalAlpha = (trail ? 0.22 : 0.55) * (1 - i.t / ION_LIFE);
+        ctx.fillRect(px(i.x) - 0.9, py(i.y) - 0.9, 1.8, 1.8);
+      }
+      ctx.globalAlpha = 1;
+
+      ctx.globalCompositeOperation = "lighter";
+      const sr = sprite.width / 2;
+      for (let k = 0; k < electrons.length; k++) {
+        const q = electrons[k];
+        ctx.drawImage(sprite, px(q.x) - sr, py(q.y) - sr);
+      }
+      for (let k = 0; k < flashes.length; k++) {
+        const f = flashes[k];
+        ctx.globalAlpha = 0.28 * (1 - f.t / 16);
+        ctx.drawImage(sprite, px(GAP_MM) - sr * 1.5, py(f.y) - sr * 1.5, sr * 3, sr * 3);
+      }
+      ctx.globalAlpha = 1;
+      ctx.globalCompositeOperation = "source-over";
+
+      // Electrodes
+      ctx.fillStyle = colors.electrode;
+      ctx.fillRect(PAD.l - 7, PAD.t - 6, 4, innerH + 12);
+      ctx.fillRect(PAD.l + innerW + 3, PAD.t - 6, 4, innerH + 12);
+
+      // x axis in mm
+      const yAx = PAD.t + innerH + 8.5;
+      ctx.strokeStyle = colors.dim;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(PAD.l, yAx);
+      ctx.lineTo(PAD.l + innerW, yAx);
+      for (let t = 0; t <= 4; t++) {
+        const x = Math.round(PAD.l + (t / 4) * innerW) + 0.5;
+        ctx.moveTo(x, yAx);
+        ctx.lineTo(x, yAx + 4);
+      }
+      ctx.stroke();
+      ctx.fillStyle = colors.dim;
+      ctx.font = '500 10px "IBM Plex Mono", ui-monospace, monospace';
+      ctx.textBaseline = "top";
+      for (let t = 0; t <= 4; t++) {
+        const x = PAD.l + (t / 4) * innerW;
+        ctx.textAlign = t === 0 ? "left" : t === 4 ? "right" : "center";
+        ctx.fillText((t * 0.5).toFixed(1) + (t === 4 ? " mm" : ""), x, yAx + 6);
+      }
+    }
+
+    function updateReadouts() {
+      outAlpha.textContent = alpha.toFixed(1);
+      const g = Math.exp(alpha * GAP_MM);
+      outGain.textContent = g < 10 ? g.toFixed(1) : Math.round(g).toLocaleString("en-US");
+    }
+    function showCount() { outCount.textContent = String(electrons.length); }
+
+    function staticFrame() {
+      electrons = []; ions = []; flashes = []; seedIn = 0;
+      for (let k = 0; k < 240; k++) step();
+      draw(false);
+      for (let k = 0; k < 24; k++) { step(); draw(true); }
+      showCount();
+    }
+
+    function tick() {
+      raf = 0;
+      if (!running) return;
+      step();
+      draw(true);
+      if (++frame % 6 === 0) showCount();
+      raf = requestAnimationFrame(tick);
+    }
+    function start() {
+      if (running || reduceMQ.matches || !visible || document.hidden) return;
+      running = true;
+      raf = requestAnimationFrame(tick);
+    }
+    function stop() {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+    }
+
+    slider.addEventListener("input", () => {
+      alpha = parseFloat(slider.value);
+      updateReadouts();
+      if (reduceMQ.matches) staticFrame();
+    });
+
+    readColors();
+    resize();
+    updateReadouts();
+    staticFrame();
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((entries) => {
+        visible = entries[0].isIntersecting;
+        if (visible) start(); else stop();
+      }, { threshold: 0.05 }).observe(panel);
+    }
+    document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); else start(); });
+    const onMotion = () => { if (reduceMQ.matches) { stop(); staticFrame(); } else start(); };
+    if (reduceMQ.addEventListener) reduceMQ.addEventListener("change", onMotion);
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(() => { resize(); if (!running) draw(false); }).observe(panel);
+    }
+    const onTheme = () => { readColors(); if (!running) draw(false); };
+    const darkMQ = window.matchMedia("(prefers-color-scheme: dark)");
+    if (darkMQ.addEventListener) darkMQ.addEventListener("change", onTheme);
+    new MutationObserver(onTheme).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (!running) draw(false); });
+
+    start();
+  })();
+
+  /* ---------- Fun facts ---------- */
+  (function facts() {
+    const FACTS = [
+      { title: "I’ve written physics into Wikipedia.", html: $("#fact-body").innerHTML },
+      { title: "I’ve studied in both Vancouvers.",
+        html: "<p>Chemistry, calculus and physics at Clark College in Vancouver, Washington; then a chemistry degree at UBC in Vancouver, British Columbia. Two cities, one name, and an international border between them.</p>" },
+      { title: "I worked the ramp at Portland International Airport.",
+        html: "<p>While I was taking chemistry and calculus at Clark College, I worked as a ramp agent for UPS at the Portland airport, from 2018 to 2021.</p>" },
+      { title: "I had Claude Code port my plasma simulator to C++.",
+        html: "<p>METHES, the MATLAB Monte Carlo code behind my electron-transport work, came out about three times faster in C++. A real speedup, but a small one, which says a lot about how well the original authors wrote it.</p>" },
+      { title: "I pulled espresso through my chemistry degree.",
+        html: "<p>For my last two years at UBC I was a barista at Great Dane Coffee in Vancouver.</p>" },
+    ];
+    let i = 0;
+    const title = $("#fact-title"), body = $("#fact-body"), count = $("#fact-count");
+    $("#fact-next").addEventListener("click", () => {
+      i = (i + 1) % FACTS.length;
+      title.textContent = FACTS[i].title;
+      body.innerHTML = FACTS[i].html;
+      count.textContent = `Fact ${i + 1} of ${FACTS.length}`;
+    });
+  })();
+
+  /* ---------- Courses ---------- */
+  (function courses() {
+    const SCHOOLS = [
+      { id: "mcgill", short: "McGill", name: "McGill University", program: "PhD, Chemical Engineering", place: "Montréal, QC", when: "Jan 2025 – 2028 (expected)" },
+      { id: "oregon", short: "Oregon", name: "University of Oregon", program: "MS, Chemistry (electrochemistry master’s internship program)", place: "Eugene, OR", when: "Sep 2023 – Dec 2024" },
+      { id: "ubc", short: "UBC", name: "University of British Columbia", program: "BSc, Chemistry (physical chemistry focus)", place: "Vancouver, BC", when: "Sep 2020 – 2023" },
+      { id: "clark", short: "Clark College", name: "Clark College", program: "Chemistry, mathematics and physics coursework", place: "Vancouver, WA", when: "Fall 2017 – Spring 2020" },
+    ];
+    // [school, term, code, title, status] — newest first; status: "progress" | "planned" | (completed)
+    const ROWS = [
+      ["mcgill", "Winter 2027", "FRSL 211D2", "Oral and Written French 1, part 2", "planned"],
+      ["mcgill", "Fall 2026", "CHEE 621", "Thermodynamics", "progress"],
+      ["mcgill", "Fall 2026", "FRSL 211D1", "Oral and Written French 1", "progress"],
+      ["mcgill", "Winter 2026", "CHEE 682", "Laboratory Safety 2"],
+      ["mcgill", "Winter 2026", "CHEE 796", "Ph.D. Proposal Defence"],
+      ["mcgill", "Winter 2026", "FRSL 208", "Intensive Elementary French"],
+      ["mcgill", "Fall 2025", "CHEE 543", "Plasma Engineering"],
+      ["mcgill", "Fall 2025", "CHEE 688", "Advanced Materials in Chemical Engineering"],
+      ["mcgill", "Fall 2025", "MATH 524", "Nonparametric Statistics"],
+      ["mcgill", "Winter 2025", "CHEE 631", "Foundations of Fluid Mechanics"],
+      ["mcgill", "Winter 2025", "CHEE 681", "Laboratory Safety 1"],
+      ["mcgill", "Winter 2025", "CHEE 687", "Research Skills and Ethics"],
+      ["mcgill", "Winter 2025", "CHEE 795", "Ph.D. Thesis Proposal"],
+
+      ["oregon", "Fall 2024", "CH 605", "Reading: Lens of the Market II"],
+      ["oregon", "Spring – Fall 2024", "CH 695", "External Graduate Internship (three terms)"],
+      ["oregon", "Winter 2024", "CH 692", "Electrochemical Device Engineering"],
+      ["oregon", "Winter 2024", "CH 693", "Electrochemical Device Laboratory"],
+      ["oregon", "Winter 2024", "CH 694", "Applied Electrochemistry Projects Laboratory"],
+      ["oregon", "Fall 2023", "CH 554", "Advanced Electrochemistry"],
+      ["oregon", "Fall 2023", "CH 689", "Chemistry Professional Development"],
+      ["oregon", "Fall 2023", "CH 690", "Numerical Simulation in Electrochemistry"],
+      ["oregon", "Fall 2023", "CH 691", "Analytical Electrochemistry Laboratory"],
+      ["oregon", "Fall 2023", "PHYS 521M", "Fourier Analysis I"],
+
+      ["ubc", "Summer 2023", "ENGL 110", "Approaches to Literature and Culture"],
+      ["ubc", "Summer 2023", "GERM 100", "Beginners’ German I"],
+      ["ubc", "Winter 2023", "CHEM 401", "Principles of Spectroscopy"],
+      ["ubc", "Winter 2023", "CHEM 407", "Statistical Mechanics in Chemistry"],
+      ["ubc", "Winter 2023", "CHEM 412", "Electronic Structure of Atoms and Molecules"],
+      ["ubc", "Winter 2023", "CHEM 417", "Nuclear Chemistry and Radiochemistry"],
+      ["ubc", "Fall 2022", "ARTH 340", "Modernism"],
+      ["ubc", "Fall 2022", "CHEM 404", "Computational Chemistry"],
+      ["ubc", "Fall 2022", "CHEM 445", "Projects in Experimental Chemistry (two terms)"],
+      ["ubc", "Fall 2022", "ENGL 368", "U.S. Literature from 1890"],
+      ["ubc", "Fall 2022", "PHIL 310", "The Philosophy of Plato"],
+      ["ubc", "Winter 2022", "BIOC 202", "Introductory Medical Biochemistry"],
+      ["ubc", "Winter 2022", "CHEM 300", "Communicating Chemistry"],
+      ["ubc", "Winter 2022", "CHEM 311", "Instrumental Analytical Chemistry"],
+      ["ubc", "Winter 2022", "CHEM 327", "Introduction to Materials Chemistry"],
+      ["ubc", "Winter 2022", "CHEM 345", "Integrated Chemistry Laboratory II"],
+      ["ubc", "Fall 2021", "BIOL 111", "Introduction to Modern Biology"],
+      ["ubc", "Fall 2021", "CHEM 304", "Fundamentals of Thermodynamics and Statistical Mechanics"],
+      ["ubc", "Fall 2021", "CHEM 312", "Introduction to Quantum Mechanics"],
+      ["ubc", "Fall 2021", "CHEM 325", "Integrated Chemistry Laboratory I"],
+      ["ubc", "Summer 2021", "CHEM 215", "Introductory Analytical Chemical Laboratory"],
+      ["ubc", "Summer 2021", "CHEM 225", "Introductory Synthetic Chemical Laboratory"],
+      ["ubc", "Summer 2021", "CHEM 245", "Intermediate Synthetic Chemistry Laboratory"],
+      ["ubc", "Winter 2021", "CHEM 213", "Organic Chemistry"],
+      ["ubc", "Winter 2021", "CHEM 218", "Fundamentals of Reactivity in Inorganic Chemistry"],
+      ["ubc", "Winter 2021", "STAT 200", "Elementary Statistics for Applications"],
+      ["ubc", "Fall 2020", "CHEM 208", "Coordination Chemistry"],
+      ["ubc", "Fall 2020", "CHEM 210", "Introduction to Chemical Analysis (Lecture)"],
+      ["ubc", "Fall 2020", "CHEM 223", "Introduction to Organic Chemistry (Lecture)"],
+      ["ubc", "Fall 2020", "CPSC 103", "Introduction to Systematic Program Design"],
+
+      ["clark", "Spring 2020", "MATH 215", "Linear Algebra"],
+      ["clark", "Spring 2020", "PHYS 93", "Physics Calculations"],
+      ["clark", "Spring 2020", "PHYS& 126", "General Physics Lab III"],
+      ["clark", "Spring 2020", "PHYS& 136", "General Physics III"],
+      ["clark", "Spring 2020", "PSYC& 200", "Lifespan Psychology"],
+      ["clark", "Winter 2020", "CMST& 220", "Public Speaking"],
+      ["clark", "Winter 2020", "HIST& 127", "World Civilizations II"],
+      ["clark", "Winter 2020", "MATH& 254", "Calculus IV"],
+      ["clark", "Winter 2020", "PHYS 92", "Physics Calculations"],
+      ["clark", "Winter 2020", "PHYS& 125", "General Physics Lab II"],
+      ["clark", "Winter 2020", "PHYS& 135", "General Physics II"],
+      ["clark", "Fall 2019", "PHIL 240", "Ethics"],
+      ["clark", "Fall 2019", "PHYS 91", "Physics Calculations"],
+      ["clark", "Fall 2019", "PHYS& 124", "General Physics Lab I"],
+      ["clark", "Fall 2019", "PHYS& 134", "General Physics I"],
+      ["clark", "Spring 2019", "CHEM& 143", "General Chemistry III"],
+      ["clark", "Spring 2019", "CHEM& 153", "General Chemistry Lab III"],
+      ["clark", "Spring 2019", "MATH& 153", "Calculus III"],
+      ["clark", "Spring 2019", "PHIL& 101", "Introduction to Philosophy"],
+      ["clark", "Spring 2019", "PSYC& 100", "General Psychology"],
+      ["clark", "Winter 2019", "CHEM& 142", "General Chemistry II"],
+      ["clark", "Winter 2019", "CHEM& 152", "General Chemistry Lab II"],
+      ["clark", "Winter 2019", "MATH 103", "College Trigonometry"],
+      ["clark", "Winter 2019", "MATH& 152", "Calculus II"],
+      ["clark", "Fall 2018", "CHEM& 141", "General Chemistry I"],
+      ["clark", "Fall 2018", "CHEM& 151", "General Chemistry Lab I"],
+      ["clark", "Fall 2018", "ENGL& 102", "English Composition II"],
+      ["clark", "Fall 2018", "MATH& 151", "Calculus I"],
+      ["clark", "Spring 2018", "ART 110", "Creativity & Concept"],
+      ["clark", "Spring 2018", "ENGL& 101", "English Composition I"],
+      ["clark", "Winter 2018", "ART 103", "Drawing I"],
+      ["clark", "Winter 2018", "MATH 111", "College Algebra"],
+      ["clark", "Fall 2017", "CHEM& 139", "General Chemistry Prep"],
+    ];
+
+    const byId = Object.fromEntries(SCHOOLS.map((s) => [s.id, s]));
+    const norm = (s) => s.toLowerCase().replace(/&/g, "").replace(/[^a-z0-9.]+/g, " ").trim();
+    const COURSES = ROWS.map(([school, term, code, title, status]) => {
+      const s = byId[school];
+      return {
+        school, term, code, title, status: status || "done",
+        hay: norm([code, code.replace(/[^A-Za-z0-9]/g, ""), title, term, s.name, s.short].join(" ")),
+      };
+    });
+
+    const state = { school: "all", status: "all", q: "" };
+    const list = $("#course-list"), count = $("#course-count"), empty = $("#course-empty");
+    $("#course-meta").textContent = `${COURSES.length} courses · ${SCHOOLS.length} schools · Fall 2017 to Winter 2027`;
+
+    function chip(label, n, pressed, onClick) {
+      const b = el("button", "chip", label);
+      b.type = "button";
+      b.setAttribute("aria-pressed", pressed ? "true" : "false");
+      if (n != null) b.append(el("span", "n", String(n)));
+      b.addEventListener("click", onClick);
+      return b;
+    }
+    function buildChips(rowId, options, key) {
+      const row = document.getElementById(rowId);
+      const buttons = options.map((o) => chip(o.label, o.n, state[key] === o.value, () => {
+        state[key] = o.value;
+        buttons.forEach((b, j) => b.setAttribute("aria-pressed", options[j].value === o.value ? "true" : "false"));
+        render();
+      }));
+      row.replaceChildren(...buttons);
+    }
+    const countBy = (fn) => COURSES.filter(fn).length;
+    buildChips("school-chips", [{ label: "All schools", value: "all", n: COURSES.length }]
+      .concat(SCHOOLS.map((s) => ({ label: s.short, value: s.id, n: countBy((c) => c.school === s.id) }))), "school");
+    buildChips("status-chips", [
+      { label: "Any status", value: "all" },
+      { label: "Completed", value: "done", n: countBy((c) => c.status === "done") },
+      { label: "In progress", value: "progress", n: countBy((c) => c.status === "progress") },
+      { label: "Planned", value: "planned", n: countBy((c) => c.status === "planned") },
+    ], "status");
+
+    function matches(c) {
+      if (state.school !== "all" && c.school !== state.school) return false;
+      if (state.status !== "all" && c.status !== state.status) return false;
+      if (state.q) {
+        const words = norm(state.q).split(" ").filter(Boolean);
+        return words.every((w) => c.hay.includes(w));
+      }
+      return true;
+    }
+
+    function render() {
+      const frag = document.createDocumentFragment();
+      let shown = 0;
+      for (const s of SCHOOLS) {
+        const rows = COURSES.filter((c) => c.school === s.id && matches(c));
+        if (!rows.length) continue;
+        shown += rows.length;
+        const art = el("article", "school");
+        art.setAttribute("aria-labelledby", "school-" + s.id);
+        const head = el("header", "school-head");
+        const h = el("h3", null, s.name);
+        h.id = "school-" + s.id;
+        const meta = el("p", "school-meta");
+        meta.append(el("span", null, s.program), el("span", null, s.place), el("span", null, s.when));
+        head.append(h, meta);
+        const terms = el("div", "terms");
+        let current = null, ul = null;
+        for (const c of rows) {
+          if (c.term !== current) {
+            current = c.term;
+            const t = el("div", "term");
+            t.append(el("h4", null, c.term));
+            ul = el("ul", "course-list");
+            t.append(ul);
+            terms.append(t);
+          }
+          const li = el("li", "course");
+          li.append(el("span", "code", c.code));
+          const title = el("span", "title", c.title);
+          if (c.status === "progress") title.append(el("span", "pill pill-progress", "In progress"));
+          if (c.status === "planned") title.append(el("span", "pill pill-planned", "Planned"));
+          li.append(title);
+          ul.append(li);
+        }
+        art.append(head, terms);
+        frag.append(art);
+      }
+      list.replaceChildren(frag);
+      count.textContent = shown === COURSES.length ? `Showing all ${COURSES.length}` : `Showing ${shown} of ${COURSES.length}`;
+      empty.hidden = shown > 0;
+      if (!shown) empty.textContent = "No courses match these filters. Try a code like CHEM 304 or a word like thermodynamics.";
+    }
+
+    $("#course-q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+    render();
+  })();
+
+  /* ---------- Contact form ---------- */
+  // Optional, for hosting this page yourself: a form-service URL (for example a Formspree endpoint).
+  // Leave it empty on claude.ai, where messages are saved to the inbox below instead.
+  const FORM_ENDPOINT = "https://formsubmit.co/ajax/isaac.triplett@mcgill.ca";
+  const EMAIL = "isaac.triplett@mcgill.ca";
+
+  let capsPromise = null;
+  function caps() {
+    if (!capsPromise) {
+      const c = window.claude;
+      capsPromise = c && typeof c.use === "function"
+        ? Promise.all([c.use("db"), c.use("user")])
+            .then(([db, user]) => ({ db, user }))
+            .catch(() => ({ db: null, user: null }))
+        : Promise.resolve({ db: null, user: null });
+    }
+    return capsPromise;
+  }
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  function withTimeout(promise, ms) {
+    return Promise.race([promise, sleep(ms).then(() => false)]);
+  }
+
+  (function contact() {
+    const form = $("#contact-form");
+    const status = $("#cf-status");
+    const submit = $("#cf-submit");
+    const fields = {
+      name: { el: $("#cf-name"), err: $("#cf-name-err"),
+        check: (v) => (v.trim() ? "" : "Enter your name.") },
+      email: { el: $("#cf-email"), err: $("#cf-email-err"),
+        check: (v) => {
+          const t = v.trim();
+          if (!t) return "Enter your email address.";
+          return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(t) ? "" : "Enter an email address like name@example.com.";
+        } },
+      phone: { el: $("#cf-phone"), err: $("#cf-phone-err"),
+        check: (v) => {
+          const t = v.trim();
+          if (!t) return "";
+          const digits = t.replace(/\D/g, "").length;
+          return /^[+()\d\s.\-]+$/.test(t) && digits >= 7 && digits <= 15
+            ? "" : "Enter a phone number with 7 to 15 digits, or leave it blank.";
+        } },
+    };
+    let attempted = false;
+
+    function setError(f, msg) {
+      f.err.textContent = msg;
+      f.err.hidden = !msg;
+      if (msg) f.el.setAttribute("aria-invalid", "true");
+      else f.el.removeAttribute("aria-invalid");
+    }
+    function validate() {
+      let first = null;
+      for (const key of Object.keys(fields)) {
+        const f = fields[key];
+        const msg = f.check(f.el.value);
+        setError(f, msg);
+        if (msg && !first) first = f.el;
+      }
+      if (first) first.focus();
+      return !first;
+    }
+    for (const key of Object.keys(fields)) {
+      const f = fields[key];
+      f.el.addEventListener("input", () => { if (attempted) setError(f, f.check(f.el.value)); });
+    }
+
+    async function deliverToInbox(msg) {
+      const { db, user } = await caps();
+      if (!db || !user) return false;
+      const uid = await user.id();
+      if (!uid) return false;
+      const ref = db.doc("messages/" + uid);
+      const write = async () => {
+        const snap = await ref.get();
+        const data = snap.exists ? snap.data() : null;
+        const prev = data && Array.isArray(data.items) ? data.items.slice(-24) : [];
+        await ref.set({ items: prev.concat([msg]), updatedAt: msg.sentAt });
+        return true;
+      };
+      try {
+        return await write();
+      } catch (err) {
+        if (err && err.code === "unavailable") {
+          await sleep(400 + Math.random() * 500);
+          try { return await write(); } catch (e) { return false; }
+        }
+        return false;
+      }
+    }
+    async function deliverToEndpoint(msg) {
+      if (!FORM_ENDPOINT) return { ok: false };
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), 12000);
+      try {
+        const res = await fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Accept": "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: msg.name,
+            email: msg.email,
+            phone: msg.phone || "(not given)",
+            message: msg.message || "(no message)",
+            _subject: "New message from " + location.hostname + " (Contact Me form)",
+            _replyto: msg.email,
+            _template: "table",
+            _captcha: "false",
+          }),
+          signal: ctrl.signal,
+        });
+        let data = null;
+        try { data = await res.json(); } catch (e) { data = null; }
+        const success = !!data && (data.success === true || data.success === "true");
+        if (res.ok && success) return { ok: true };
+        const activation = !!data && typeof data.message === "string" && /activat/i.test(data.message);
+        return { ok: false, activation };
+      } catch (e) {
+        return { ok: false };
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    function plainText(msg) {
+      return [
+        `Name: ${msg.name}`,
+        `Email: ${msg.email}`,
+        `Phone: ${msg.phone || "(not given)"}`,
+        "",
+        msg.message || "(no message)",
+      ].join("\n");
+    }
+    function showSent(msg) {
+      const box = el("div", "notice ok");
+      const p = el("p");
+      p.append(el("strong", null, "Sent. "), document.createTextNode(`Thanks, ${msg.name}. Your message reached my inbox, and I’ll reply to ${msg.email}.`));
+      box.append(p);
+      status.replaceChildren(box);
+    }
+    function showFallback(msg, activation) {
+      const box = el("div", "notice info");
+      const p = el("p");
+      if (activation) {
+        p.append(el("strong", null, "Not sent yet. "), document.createTextNode(`The contact form is still waiting to be switched on, so nothing was delivered. Email it to me at ${EMAIL}; here it is, ready to paste:`));
+      } else {
+        p.append(el("strong", null, "Not sent. "), document.createTextNode(`This page couldn’t deliver your message, so nothing was saved or sent. Email it to me at ${EMAIL}; here it is, ready to paste:`));
+      }
+      const pre = el("pre", "msg-copy", plainText(msg));
+      pre.id = "cf-copy-text";
+      const actions = el("div", "actions");
+      const b1 = el("button", "btn-ghost btn-small", "Copy message");
+      b1.type = "button";
+      b1.dataset.copyTarget = "#cf-copy-text";
+      const b2 = el("button", "btn-ghost btn-small", "Copy email address");
+      b2.type = "button";
+      b2.dataset.copyTarget = "#email-text";
+      actions.append(b1, b2);
+      box.append(p, pre, actions);
+      status.replaceChildren(box);
+    }
+
+    form.addEventListener("submit", async (ev) => {
+      ev.preventDefault();
+      attempted = true;
+      if (!validate()) return;
+      const msg = {
+        name: fields.name.el.value.trim().slice(0, 120),
+        email: fields.email.el.value.trim().slice(0, 200),
+        phone: fields.phone.el.value.trim().slice(0, 40),
+        message: $("#cf-message").value.trim().slice(0, 2000),
+        sentAt: new Date().toISOString(),
+      };
+      if ($("#cf-company").value) { showSent(msg); form.reset(); return; }
+      submit.disabled = true;
+      submit.textContent = "Sending…";
+      status.replaceChildren();
+      let result = { ok: await withTimeout(deliverToInbox(msg).catch(() => false), 15000) };
+      if (!result.ok) result = await deliverToEndpoint(msg);
+      submit.disabled = false;
+      submit.textContent = "Send message";
+      if (result.ok) {
+        showSent(msg);
+        form.reset();
+        attempted = false;
+        for (const key of Object.keys(fields)) setError(fields[key], "");
+      } else {
+        showFallback(msg, result.activation);
+      }
+    });
+
+    form.addEventListener("reset", () => {
+      attempted = false;
+      for (const key of Object.keys(fields)) setError(fields[key], "");
+      status.replaceChildren();
+    });
+  })();
+
+  /* ---------- Owner inbox ---------- */
+  (async function inbox() {
+    const { db, user } = await caps();
+    if (!db || !user) return;
+    let owner = false;
+    try { owner = await user.isOwner(); } catch (e) { owner = false; }
+    if (!owner) return;
+
+    const section = $("#inbox"), statusEl = $("#inbox-status"), listEl = $("#inbox-list");
+    section.hidden = false;
+    let timer = setTimeout(() => {
+      statusEl.textContent = "Messages can’t be reached yet. They’ll appear here once the connection returns.";
+    }, 10000);
+
+    function fmt(iso) {
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return "";
+      return d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" });
+    }
+
+    async function removeMessage(docId, sentAt, btn) {
+      btn.disabled = true;
+      btn.textContent = "Deleting…";
+      try {
+        const ref = db.doc("messages/" + docId);
+        const snap = await ref.get();
+        const data = snap.exists ? snap.data() : null;
+        const items = data && Array.isArray(data.items) ? data.items.filter((m) => m.sentAt !== sentAt) : [];
+        if (items.length) await ref.set({ items, updatedAt: new Date().toISOString() });
+        else await ref.delete();
+      } catch (e) {
+        btn.disabled = false;
+        btn.textContent = "Couldn’t delete. Try again";
+      }
+    }
+
+    function render(all) {
+      if (!all.length) {
+        statusEl.textContent = "No messages yet. When someone sends the form, their message appears here.";
+        listEl.replaceChildren();
+        return;
+      }
+      statusEl.textContent = `${all.length} message${all.length === 1 ? "" : "s"}, newest first.`;
+      const frag = document.createDocumentFragment();
+      for (const m of all) {
+        const li = el("li", "msg");
+        const head = el("div", "msg-head");
+        head.append(el("span", "msg-who", m.name || "No name given"), el("span", "msg-time", fmt(m.sentAt)));
+        const contact = el("div", "msg-contact");
+        if (m.email) contact.append(el("span", null, m.email));
+        if (m.phone) contact.append(el("span", null, m.phone));
+        li.append(head, contact);
+        if (m.message) li.append(el("p", "msg-body", m.message));
+        const actions = el("div", "actions");
+        const del = el("button", "btn-ghost btn-small", "Delete");
+        del.type = "button";
+        del.addEventListener("click", () => {
+          if (del.dataset.armed === "1") { removeMessage(m.docId, m.sentAt, del); return; }
+          del.dataset.armed = "1";
+          del.textContent = "Confirm delete";
+          setTimeout(() => {
+            if (del.isConnected && !del.disabled) { del.dataset.armed = ""; del.textContent = "Delete"; }
+          }, 4000);
+        });
+        actions.append(del);
+        li.append(actions);
+        frag.append(li);
+      }
+      listEl.replaceChildren(frag);
+    }
+
+    try {
+      db.collection("messages").onSnapshot((snap) => {
+        if (!snap.metadata.fromCache && timer) { clearTimeout(timer); timer = null; }
+        const all = [];
+        for (const d of snap.docs) {
+          const body = d.data() || {};
+          if (Array.isArray(body.items)) {
+            for (const m of body.items) all.push(Object.assign({ docId: d.id }, m));
+          }
+        }
+        all.sort((a, b) => String(b.sentAt).localeCompare(String(a.sentAt)));
+        render(all);
+      }, () => {
+        if (timer) { clearTimeout(timer); timer = null; }
+        statusEl.textContent = "Messages couldn’t be loaded here.";
+      });
+    } catch (e) {
+      if (timer) { clearTimeout(timer); timer = null; }
+      statusEl.textContent = "Messages couldn’t be loaded here.";
+    }
+  })();
+})();
+</script>
+</body>
+</html>
